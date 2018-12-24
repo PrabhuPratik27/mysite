@@ -6,7 +6,6 @@ from . import forms
 
 # Create your views here.
 
-@login_required(login_url='accounts:login')
 def articlelist(request):
 	articles = Article.objects.all().order_by('date')
 	return render(request,'articles/article_list.html',{'articles':articles})
